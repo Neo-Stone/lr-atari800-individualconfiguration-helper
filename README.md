@@ -13,6 +13,7 @@ In addition to enabling the option atari800_individualconfiguration it sets all 
 core options, that are used in the emulator initialization process.
 
 The following values will be set:
+```
   atari800_artifacting = "disabled"
   atari800_cassboot = "disabled"
   atari800_individualconfiguration = "enabled"
@@ -24,12 +25,13 @@ The following values will be set:
   atari800_resolution = "336x240"
   atari800_sioaccel = "enabled"
   atari800_system = "400/800 (OS B)"
+```
 
 ## 2. Individual emulators have to be defined
 
 For this the shell script
 
-  lr-atari800-rpi-2-copy-emulators-config.sh
+  `lr-atari800-rpi-2-copy-emulators-config.sh`
 
 might be used.
 
@@ -40,24 +42,25 @@ The content of the provided "emulators.cfg" might also be taken only as an assum
 
 Building required emulators can be done using
 
-  lr-atari800-rpi-3-build-lr-emulators.sh
+  `lr-atari800-rpi-3-build-lr-emulators.sh`
 
 This will copy the existing "atari800_libretro.so" emulator to get the needed differentiation.
 
 For example (to get an idea):
+```
   lr-atari800.so (will be used for an Atari 800 48KB NTSC machine without BASIC and without artifacting)
   lr-atari800-artifact-bb1.so (will be used for an Atari 800 48KB NTSC machine without BASIC and with artifacting brown/blue 1 enabled)
   lr-atari800-pal.so (will be used for an Atari 800 48KB PAL machine without BASIC and without artifacting)
   lr-atari800xl.so (will be used for an Atari 800 XL 64KB NTSC machine without BASIC and without artifacting)
   lr-atari800xl-pal-artifact-simple.so (will be used for an Atari 800 XL 64KB PAL machine without BASIC and with simple PAL artifacting)
-
+```
   ... and so on.
 
 ## 4. Individual configfiles are needed. Each configfile has to match exactly the appropriate emulator name plus the file extension ".cfg"
 
 This can be achieved be using the script:
 
-  lr-atari800-rpi-4-copy-configfiles.sh
+  `lr-atari800-rpi-4-copy-configfiles.sh`
 
 It just copies all files in the folder "/configfiles" to the required rpi config folder.
 It is recommended to take the configfiles just as an assumption.
@@ -66,6 +69,7 @@ This configfiles display my personal configuration.
 Personal changes have to be done for the following (and for every file!):
 
 - concerning personal used (and installed) BIOS files (which reflect the following entries):
+```
   ROM_OS_A_NTSC=/home/pi/RetroPie/BIOS/Atari OS Rev A (1979) (Atari) (NTSC) (400-800).rom
   ROM_OS_A_PAL=/home/pi/RetroPie/BIOS/ATARIOSA.ROM
   ROM_OS_B_NTSC=/home/pi/RetroPie/BIOS/Atari REVBNTSC.ROM
@@ -87,16 +91,18 @@ Personal changes have to be done for the following (and for every file!):
   ROM_BASIC_C=/home/pi/RetroPie/BIOS/ATARIBAS.ROM
   ROM_XEGAME=
   ROM_400/800_CUSTOM=/home/pi/RetroPie/BIOS/ATARIOSB.ROM
+```
 
 - concerning personal used external colour palette (which reflect the following entries):
+```
   COLOURS_NTSC_EXTERNAL_PALETTE=/opt/retropie/configs/atari800/act/Real.act
   COLOURS_NTSC_EXTERNAL_PALETTE_LOADED=1
   COLOURS_NTSC_ADJUST_EXTERNAL_PALETTE=1
-
+```
   and/or
-
+```
   COLOURS_PAL_EXTERNAL_PALETTE=/opt/retropie/configs/atari800/act/Real.act
   COLOURS_PAL_EXTERNAL_PALETTE_LOADED=1
   COLOURS_PAL_ADJUST_EXTERNAL_PALETTE=1
-
+```
 All other values are set appropriate as needed.
