@@ -1,11 +1,11 @@
 # lr-atari800-individualconfiguration-helper
  Helper files for the lr-atari800 port showing the usage of individual configuration files on the rpi.
 
-## 1. Core option atari800_individualconfiguration must be set to "enabled".
+## 1. Core option atari800_individualconfiguration must be set to "enabled"
 
 To achive this the shell script
 
-  lr-atari800-rpi-1-set-core-options.sh
+  `lr-atari800-rpi-1-set-core-options.sh`
 
 can be used (or taken as an assumption).
 
@@ -25,7 +25,7 @@ The following values will be set:
   atari800_sioaccel = "enabled"
   atari800_system = "400/800 (OS B)"
 
-## 2. Individual emulators have to be defined.
+## 2. Individual emulators have to be defined
 
 For this the shell script
 
@@ -36,7 +36,7 @@ might be used.
 The provided file "emulators.cfg" will replace the default atari800 "emulators.cfg" file.
 The content of the provided "emulators.cfg" might also be taken only as an assumption.
 
-## 3. Individual emulators are needed to give each emulator its own configuration file.
+## 3. Individual emulators are needed to give each emulator its own configuration file
 
 Building required emulators can be done using
 
@@ -53,7 +53,7 @@ For example (to get an idea):
 
   ... and so on.
 
-## 4. Individual configfiles are needed. Each configfile has to match exactly the appropriate emulator name plus the file extension ".cfg".
+## 4. Individual configfiles are needed. Each configfile has to match exactly the appropriate emulator name plus the file extension ".cfg"
 
 This can be achieved be using the script:
 
