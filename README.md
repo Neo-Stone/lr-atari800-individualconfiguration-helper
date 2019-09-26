@@ -55,13 +55,17 @@ lr-atari800xl.so.cfg
 ```
 These defined configuration files should cover almost all Atari computer needs. If more is needed please add the appropriate files.
 
+***
+
 ### Important note:
 
-This configfiles are properly defined and can be used as "is". If you do so please be sure to read **Pt. 4!** 
+This configfiles are properly defined and can be used as "is". If you do so please be sure to read **What has to be done Pt. 4!** 
 Unlikely that you use exactly the same BIOS files and external colour palette you **must** change your personal 
 configfiles concerning this parts to adapt it to make it work properly!
 
 ***
+
+## What has to be done
 
 ### 1. Core option atari800_individualconfiguration must be set to "enabled"
 
