@@ -12,7 +12,7 @@ The lr-atari800 core option `atari800_individualconfiguration` found in `retroar
 If set to "enabled" the lr-atari800 emulator will work with configuration files that rely on the calling emulator name.
 The configuration filenname has to have exactly the name of the corresponding emulator plus a `.cfg` ending.
 
-Example:
+Examples:
 
     Emulator name is:                 lr-atari800.so
     Configuration filename has to be: lr-atari800.so.cfg
@@ -20,9 +20,48 @@ Example:
     Emulator name is:                 lr-atari800xl-pal-artifact-simple.so
     Configuration filename has to be: lr-atari800xl-pal-artifact-simple.so.cfg
 
+Each configuration filename should be defined as required (and obviously the filename should reflect the configuration).
 
+Examples:
+```
+  lr-atari800.so.cfg                       (Atari 800 48KB/NTSC/no BASIC/no artifacting)
+  lr-atari800-artifact-bb1.so.cfg          (Atari 800 48KB/NTSC/no BASIC/artifacting is brown/blue 1)
+  lr-atari800-pal.so.cfg                   (Atari 800 48KB/PAL/no BASIC/no artifacting)
+  lr-atari800xl.so.cfg                     (Atari 800 XL 64KB/NTSC/no BASIC/no artifacting)
+  lr-atari800xl-pal-artifact-simple.so.cfg (Atari 800 XL 64KB/PAL/no BASIC/artifacting is PAL simple)
+```
+  ... and so on.
+  
+Actually the following configuration files are defined with their proper config values set:
+```
+lr-atari130xe-pal.so.cfg		
+lr-atari130xe.so.cfg		
+lr-atari800-artifact-bb1.so.cfg		
+lr-atari800-artifact-bb2.so.cfg		
+lr-atari800-artifact-ctia.so.cfg		
+lr-atari800-artifact-gtia.so.cfg		
+lr-atari800-basic.so.cfg		
+lr-atari800-pal.so.cfg		
+lr-atari800.so.cfg		
+lr-atari800xl-artifact-bb1.so.cfg		
+lr-atari800xl-artifact-bb2.so.cfg		
+lr-atari800xl-artifact-ctia.so.cfg		
+lr-atari800xl-artifact-gtia.so.cfg		
+lr-atari800xl-pal-artifact-blend.so.cfg		
+lr-atari800xl-pal-artifact-simple.so.cfg		
+lr-atari800xl-pal-basic.so.cfg		
+lr-atari800xl-pal.so.cfg		
+lr-atari800xl.so.cfg
+```
+These defined configuration files should cover almost all Atari computer needs. If more is needed please add the appropriate files.
 
+### Important note:
 
+This configfiles are properly defined and can be used as "is". If you do so please be sure to read **Pt. 4!** 
+Unlikely that you use exactly the same BIOS files and external colour palette you **must** change your personal 
+configfiles concerning this parts to adapt it to make it work properly!
+
+***
 
 ### 1. Core option atari800_individualconfiguration must be set to "enabled"
 
