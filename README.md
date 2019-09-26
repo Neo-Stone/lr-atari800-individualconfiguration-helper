@@ -1,6 +1,8 @@
 # lr-atari800-individualconfiguration-helper
  Helper files for the lr-atari800 port showing the usage of individual configuration files on the rpi.
 
+***
+
 ## Individual configurations for the lr-atari800 emulator
 
 The lr-atari800 emulator is able to emulate almost every Atari 800 / XL / XE Computers with multiple configurations.
@@ -172,3 +174,6 @@ Personal changes have to be done for the following (and for every file!):
   COLOURS_PAL_ADJUST_EXTERNAL_PALETTE=1
 ```
 All other values are set appropriate as needed.
+
+***
+
