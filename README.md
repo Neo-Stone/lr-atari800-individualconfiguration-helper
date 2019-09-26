@@ -1,7 +1,30 @@
 # lr-atari800-individualconfiguration-helper
  Helper files for the lr-atari800 port showing the usage of individual configuration files on the rpi.
 
-## 1. Core option atari800_individualconfiguration must be set to "enabled"
+## Individual configurations for the lr-atari800 emulator
+
+The lr-atari800 emulator is able to emulate almost every Atari 800 / XL / XE Computers with multiple configurations.
+Though it has only one configuration file to achieve this. Quite obviously this is not sufficient for having multiple 
+different configuration needs.
+
+The lr-atari800 core option `atari800_individualconfiguration` found in `retroarch-core-options.cfg` will now take care of this problem.
+
+If set to "enabled" the lr-atari800 emulator will work with configuration files that rely on the calling emulator name.
+The configuration filenname has to have exactly the name of the corresponding emulator plus a `.cfg` ending.
+
+Example:
+
+    Emulator name is:                 lr-atari800.so
+    Configuration filename has to be: lr-atari800.so.cfg
+
+    Emulator name is:                 lr-atari800xl-pal-artifact-simple.so
+    Configuration filename has to be: lr-atari800xl-pal-artifact-simple.so.cfg
+
+
+
+
+
+### 1. Core option atari800_individualconfiguration must be set to "enabled"
 
 To achive this the shell script
 
@@ -27,7 +50,7 @@ The following values will be set:
   atari800_system = "400/800 (OS B)"
 ```
 
-## 2. Individual emulators have to be defined
+### 2. Individual emulators have to be defined
 
 For this the shell script
 
@@ -38,7 +61,7 @@ might be used.
 The provided file "emulators.cfg" will replace the default atari800 "emulators.cfg" file.
 The content of the provided "emulators.cfg" might also be taken only as an assumption.
 
-## 3. Individual emulators are needed to give each emulator its own configuration file
+### 3. Individual emulators are needed to give each emulator its own configuration file
 
 Building required emulators can be done using
 
@@ -56,7 +79,7 @@ For example (to get an idea):
 ```
   ... and so on.
 
-## 4. Individual configfiles are needed. Each configfile has to match exactly the appropriate emulator name plus the file extension ".cfg"
+### 4. Individual configfiles are needed. Each configfile has to match exactly the appropriate emulator name plus the file extension ".cfg"
 
 This can be achieved be using the script:
 
