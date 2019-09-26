@@ -177,3 +177,6 @@ All other values are set appropriate as needed.
 
 ***
 
+Now one should be able to start an Atari 800 game from emulationstation and switch the emulator for the rom to the required one.
+Makes testing easy too! For example to see the differences in artifacting for a hi-res game. Only the emulator for the selected rom
+has to be changed! Always leave the default emulator to lr-atari800. 
