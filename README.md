@@ -9,6 +9,11 @@ The lr-atari800 emulator is able to emulate almost every Atari 800 / XL / XE Com
 Though it has only one configuration file to achieve this. Quite obviously this is not sufficient for having multiple 
 different configuration needs.
 
+This problem has also been addressed by a really good forum thread created by `rkoster` (thanks a lot), which you might also want to read.
+> Look here: [lr-atari800, 5200, artifacting, BASIC, and other guidance](https://retropie.org.uk/forum/topic/22392/lr-atari800-5200-artifacting-basic-and-other-guidance)
+
+***
+
 The lr-atari800 core option `atari800_individualconfiguration` found in `retroarch-core-options.cfg` will now take care of this problem.
 
 If set to "enabled" the lr-atari800 emulator will work with configuration files that rely on the calling emulator name.
