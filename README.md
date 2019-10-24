@@ -13,8 +13,56 @@ This problem has also been addressed by a really good forum thread created by `r
 > Look here: [lr-atari800, 5200, artifacting, BASIC, and other guidance](https://retropie.org.uk/forum/topic/22392/lr-atari800-5200-artifacting-basic-and-other-guidance)
 
 ***
+***
 
-The lr-atari800 core option `atari800_individualconfiguration` found in `retroarch-core-options.cfg` will now take care of this problem.
+## Testing
+
+Testing the emulator with multiple configurations should be quite easy. A very simple way - as long as my software changes are not part of the original `libretro-atari800` and my pull request is waiting for integration - is the following:
+
+#### 1. A small change in the scriptmodule `lr-atari800.sh` is needed. For the `RPI` it is found here:
+> `/home/pi/RetroPie-Setup/scriptmodules/libretrocores/lr-atari800.sh`
+
+Edit this file by changing the function:
+> `function sources_lr-atari800()`
+
+It will look like
+```
+function sources_lr-atari800() {
+    gitPullOrClone "$md_build" https://github.com/libretro/libretro-atari800.git
+}
+```
+
+Now you want to change it to
+```
+function sources_lr-atari800() {
+    gitPullOrClone "$md_build" https://github.com/Neo-Stone/libretro-atari800.git
+}
+```
+
+After you are done do not forget to save the file `lr-atari800.sh`!
+
+> That was the main part!
+
+#### 2. Now enter the [Retropie-Setup Script](https://retropie.org.uk/docs/Updating-RetroPie/).
+Choose 
+> Manage packages
+>> Manage main packages
+>>> lr-atari800
+>>>> Update from source
+
+Select it and let it work. After it is successfully finished go back and reboot your machine.
+> Perform reboot
+
+#### 3. Now you are done and ready for testing this functionality! Congrats!
+
+> After finishing testing or as soon as my pull request is accepted and my changes are part of the original `libretro-atari800` just undo the changes as they are not needed any more.
+
+***
+***
+
+## Start with individual configurations for the lr-atari800 emulator
+
+The lr-atari800 core option `atari800_individualconfiguration` found in `retroarch-core-options.cfg` will now take care of this problem (of having only one configuration file).
 
 If set to "enabled" the lr-atari800 emulator will work with configuration files that rely on the calling emulator name.
 The configuration filenname has to have exactly the name of the corresponding emulator plus a `.cfg` ending.
