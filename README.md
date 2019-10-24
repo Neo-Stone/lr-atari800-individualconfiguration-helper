@@ -118,6 +118,13 @@ This configfiles are properly defined and can be used as "is". If you do so plea
 Unlikely that you use exactly the same BIOS files and external colour palette you **must** change your personal 
 configfiles concerning this parts to adapt it to make it work properly!
 
+### **Clarification:**
+
+There is **NO** need to copy my configuration files at all! The required configuration file will be created automatically the first time a specific emulator is used with the bios files correctly set found in the appropriate bios folder!
+
+**BUT**:
+The newly created configuration file has only default values set and not the required ones one should want for the selected emulator! In that case one has to enter the emulator manually after start (by pressing F1) and set **all** wanted configs in the emulator menu. After finishing this the configfile has to be saved in the emulator too! This of course has only to be done once. For verification purposes one may want to have a look at my provided version of the configfile too.
+
 ***
 
 ## What has to be done
